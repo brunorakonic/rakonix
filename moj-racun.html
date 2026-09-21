@@ -7,10 +7,40 @@
     <title>Moj račun | Rakonix</title>
 
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/moj-racun.css">
+    <link rel="stylesheet" href="css/moj-racun.css?v=20260921-2">
 </head>
 
 <body>
+<header class="portal-header">
+
+    <a href="index.html" class="portal-logo">
+        <img
+            src="slike/rakonix bijela slova transparent.svg"
+            alt="Rakonix"
+        >
+    </a>
+
+    <nav class="portal-nav">
+
+        <a href="moj-racun.html" class="portal-nav-active">
+            Moj račun
+        </a>
+
+        <a href="admin.html" id="admin-link" class="portal-admin-link" hidden>
+    Admin panel
+</a>
+
+        <button
+            type="button"
+            id="odjava-header-btn"
+            class="portal-odjava-btn"
+        >
+            Odjavi se
+        </button>
+
+    </nav>
+
+</header>
 
     <main>
 
@@ -56,35 +86,6 @@
 
     <script type="module" src="js/moj-racun.js"></script>
 
-<header class="portal-header">
 
-    <a href="index.html" class="portal-logo">
-        <img
-            src="slike/rakonix bijela slova transparent.svg"
-            alt="Rakonix"
-        >
-    </a>
-
-    <nav class="portal-nav">
-
-        <a href="moj-racun.html" class="portal-nav-active">
-            Moj račun
-        </a>
-
-        <a href="admin.html" id="admin-link" class="portal-admin-link" hidden>
-    Admin panel
-</a>
-
-        <button
-            type="button"
-            id="odjava-header-btn"
-            class="portal-odjava-btn"
-        >
-            Odjavi se
-        </button>
-
-    </nav>
-
-</header>
 </body>
 </html>
