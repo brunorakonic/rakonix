@@ -1,3 +1,16 @@
+/* Keep authorized portal links accessible on narrow screens. */
+.portal-nav a[hidden] { display: none; }
+@media (max-width: 768px) {
+    .portal-header { flex-wrap: wrap; gap: 12px; }
+    .portal-nav { flex-wrap: wrap; gap: 12px; }
+    .portal-nav a:not([hidden]) { display: inline-flex; align-items: center; min-height: 44px; }
+}
+@media (max-width: 480px) {
+    .portal-nav { width: 100%; justify-content: space-between; gap: 8px; }
+    .portal-nav a { font-size: .7rem; letter-spacing: .06em; }
+    .auth-sekcija { padding-top: 160px; }
+}
+
 /* Rakonix — moj-racun.css
    Izvorni redoslijed pravila i media uvjeti su sacuvani. */
 
