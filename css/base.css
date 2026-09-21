@@ -1,0 +1,853 @@
+/* Rakonix — base.css
+   Izvorni redoslijed pravila i media uvjeti su sacuvani. */
+
+:root {
+    --pozadina: #0a0a0a;
+    --tekst: #ffffff;
+    --siva: #b8b8b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--pozadina);
+    color: var(--tekst);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.03;
+    background-image: radial-gradient(circle, #ffffff 1px, transparent 1px);
+    background-size: 18px 18px;
+}
+
+header,
+main,
+.hero-branding,
+footer {
+    position: relative;
+    z-index: 3;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.logo a {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.logo a:hover img {
+    opacity: 0.7;
+    transform: scale(1.05);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 55px;
+}
+
+nav ul li a {
+    position: relative;
+    padding-bottom: 6px;
+    text-decoration: none;
+    color: var(--tekst);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: var(--siva);
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 15px 38px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-btn:hover,
+.hero-btn:focus {
+    background-color: #ffffff;
+    color: #0a0a0a;
+    border-color: #ffffff;
+}
+
+.hero-branding p,
+.hero-btn {
+    opacity: 0;
+    animation: fadeUp 1s ease forwards;
+}
+
+.hero-btn {
+    animation-delay: 0.6s;
+}
+
+.hero-btn,
+.form-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-btn::before,
+.form-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+    transition: left 0.6s ease;
+}
+
+.hero-btn:hover::before,
+.form-btn:hover::before {
+    left: 120%;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    background-color: #0a0a0a;
+}
+
+section {
+    padding: 100px 8%;
+}
+
+section h2 {
+    font-size: 2.6rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+section p {
+    max-width: 900px;
+    color: var(--siva);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.section-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--siva);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 16px;
+    border: 1px solid #333333;
+    border-radius: 14px;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #777777;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: rgba(255, 255, 255, 0.75);
+    background-color: #151515;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-btn {
+    width: 100%;
+    padding: 16px 34px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 999px;
+}
+
+.form-btn:hover {
+    background-color: #ffffff;
+    color: #0a0a0a;
+}
+
+.poruka-greske {
+    min-height: 20px;
+    margin: 8px 0 0;
+    padding-left: 4px;
+
+    color: #ff7474;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.form-group input.polje-greska {
+    border-color: #ff7474;
+    box-shadow: 0 0 0 3px rgba(255, 116, 116, 0.14);
+}
+
+.form-group input.polje-greska:focus {
+    outline: none;
+    border-color: #ff7474;
+    box-shadow: 0 0 0 4px rgba(255, 116, 116, 0.18);
+}
+
+.form-group input.polje-ispravno {
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+footer {
+    padding: 35px 8%;
+    text-align: center;
+    background-color: #050505;
+    border-top: 1px solid #202020;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-top-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 11px 18px;
+    margin-bottom: 8px;
+
+    color: var(--siva);
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.footer-top-link span {
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.footer-top-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-3px);
+}
+
+.footer-top-link:hover span {
+    transform: translateY(-3px);
+}
+
+.footer-top-link:focus-visible {
+    outline: 1px solid #ffffff;
+    outline-offset: 4px;
+}
+
+footer p {
+    margin-top: 12px;
+    color: var(--siva);
+    font-size: 0.9rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 1px solid #ffffff;
+    outline-offset: 4px;
+}
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 999px;
+}
+
+.status-forme {
+    min-height: 24px;
+    margin-top: 18px;
+    color: #b8b8b8;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.auth-sekcija {
+    min-height: 100vh;
+    padding: 140px 6% 70px;
+}
+
+.auth-kartica {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.status-badge {
+    flex-shrink: 0;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.status-u-obradi {
+    color: #d0d0d0;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.status-zavrseno {
+    color: #000;
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+.portal-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 6%;
+
+    background: rgba(10, 10, 10, 0.82);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    z-index: 2000;
+}
+
+.portal-logo {
+    display: flex;
+    align-items: center;
+}
+
+.portal-logo img {
+    display: block;
+    width: 150px;
+    height: auto;
+}
+
+.portal-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.portal-nav a,
+.portal-odjava-btn {
+    color: #fff;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    text-decoration: none;
+}
+
+.portal-nav a {
+    position: relative;
+}
+
+.portal-nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: #fff;
+
+    transition: width 0.25s ease;
+}
+
+.portal-nav a:hover::after,
+.portal-nav-active::after {
+    width: 100%;
+}
+
+.portal-odjava-btn {
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 999px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.portal-odjava-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.account-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 999px;
+
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    transition: 0.25s ease;
+}
+
+.account-link:hover {
+    background: #fff;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    header {
+
+            display: flex;
+
+            flex-direction: row;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            width: 100%;
+
+            height: 64px;
+
+            min-height: 64px;
+
+            padding: 0 20px;
+
+            gap: 0;
+
+        }
+
+    
+
+    .logo {
+
+            position: static;
+
+            margin: 0;
+
+            padding: 0;
+
+            transform: none;
+
+        }
+
+    
+
+    .logo a {
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+    
+
+    .logo img {
+
+            display: block;
+
+            width: 100px;
+
+            height: auto;
+
+        }
+
+    
+
+    .menu-toggle {
+
+            display: flex;
+
+            position: static;
+
+            margin: 0;
+
+            padding: 8px;
+
+            transform: none;
+
+            flex-shrink: 0;
+
+        }
+
+    
+
+    .main-nav {
+
+            display: none;
+
+            position: absolute;
+
+            top: 64px;
+
+            left: 0;
+
+            width: 100%;
+
+            padding: 25px 20px;
+
+            background-color: #0a0a0a;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+
+        }
+
+    
+
+    .main-nav.is-open {
+
+            display: block;
+
+        }
+
+    
+
+    .main-nav ul {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 24px;
+
+        }
+
+    
+
+    .status-badge {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+    
+
+        padding: 7px 13px;
+
+    
+
+        border-radius: 999px;
+
+    
+
+        font-size: 0.72rem;
+
+        font-weight: 700;
+
+        letter-spacing: 0.08em;
+
+        text-transform: uppercase;
+
+    }
+
+    
+
+    .status-u-obradi {
+
+        background: rgba(255, 255, 255, 0.08);
+
+        border: 1px solid rgba(255, 255, 255, 0.18);
+
+        color: #d0d0d0;
+
+    }
+
+    
+
+    .status-zavrseno {
+
+        background: rgba(255, 255, 255, 0.92);
+
+        border: 1px solid #fff;
+
+        color: #000;
+
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+
+            opacity: 1;
+
+            transform: none;
+
+            transition: none;
+
+        }
+}
+
+@media (max-width: 768px) {
+    .auth-sekcija {
+
+            padding: 100px 20px 50px;
+
+        }
+
+    
+
+    .portal-header {
+
+        padding: 15px 20px;
+
+    }
+
+    
+
+    .portal-logo img {
+
+        width: 120px;
+
+    }
+
+    
+
+    .portal-nav {
+
+        gap: 14px;
+
+    }
+
+    
+
+    .portal-nav a {
+
+        display: none;
+
+    }
+
+    
+
+    .portal-odjava-btn {
+
+        padding: 9px 14px;
+
+        font-size: 0.7rem;
+
+    }
+}
+
+
+/* Završna prilagodba malim ekranima i tipkovnici. */
+html { scroll-padding-top: 110px; }
+h1, h2, h3, p, a { overflow-wrap: anywhere; }
+button:disabled { cursor: wait; opacity: .65; }
+@media (max-width: 600px) {
+    section { padding: 64px 6%; }
+    section h2 { font-size: clamp(1.8rem, 8vw, 2.6rem); }
+    .form-row { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .form-group { min-width: 0; }
+    html { scroll-padding-top: 80px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .hero-branding p, .hero-btn, .reveal { opacity: 1; transform: none; }
+}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin | Rakonix</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body class="admin-page">
+
+    <header class="portal-header">
+
+        <a href="index.html" class="portal-logo">
+            <img
+                src="slike/rakonix bijela slova transparent.svg"
+                alt="Rakonix"
+            >
+        </a>
+
+        <nav class="portal-nav">
+
+            <a href="moj-racun.html">
+                Moj račun
+            </a>
+
+            <button
+                type="button"
+                id="admin-odjava-btn"
+                class="portal-odjava-btn"
+            >
+                Odjavi se
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="auth-sekcija">
+
+            <div class="auth-kartica">
+
+                <span class="section-label">
+                    Rakonix administracija
+                </span>
+
+                <h1>Admin panel</h1>
+
+                <p id="admin-status">
+                    Provjera administratorskog računa...
+                </p>
+
+
+                <section id="admin-sadrzaj" hidden>
+
+                    <section class="admin-statistika">
+
+    <article class="admin-stat-kartica">
+        <span>Klijenti</span>
+
+        <strong id="stat-klijenti">
+            0
+        </strong>
+
+        <p>Registrirani korisnici</p>
+    </article>
+
+
+    <article class="admin-stat-kartica">
+        <span>Aktivni projekti</span>
+
+        <strong id="stat-aktivni">
+            0
+        </strong>
+
+        <p>Projekti u obradi</p>
+    </article>
+
+
+    <article class="admin-stat-kartica">
+        <span>Završeni projekti</span>
+
+        <strong id="stat-zavrseni">
+            0
+        </strong>
+
+        <p>Uspješno završeni projekti</p>
+    </article>
+
+</section>
+
+<section class="admin-upiti-sekcija">
+
+    <div class="admin-sekcija-zaglavlje">
+        <div>
+            <span class="section-label">Kontakt</span>
+            <h2>Novi upiti</h2>
+        </div>
+
+        <span id="broj-novih-upita" class="admin-upiti-broj">
+            0 novih
+        </span>
+    </div>
+
+    <div id="upiti-lista" class="admin-upiti-lista">
+        <p>Učitavanje upita...</p>
+    </div>
+
+</section>
+
+                    <div class="admin-naslov">
+                        <h2>Korisnici</h2>
+
+                        <p>
+                            Pregled registriranih Rakonix korisnika.
+                        </p>
+                    </div>
+
+                    <div class="korisnici-filtri">
+                        <label for="korisnici-trazi">Pretraži korisnike
+                            <input type="search" id="korisnici-trazi" placeholder="Ime ili email" aria-controls="korisnici-lista">
+                        </label>
+                        <label for="korisnici-uloga">Uloga
+                            <select id="korisnici-uloga" aria-controls="korisnici-lista">
+                                <option value="svi">Svi</option><option value="client">Klijenti</option><option value="admin">Administratori</option>
+                            </select>
+                        </label>
+                        <label for="korisnici-sort">Sortiranje
+                            <select id="korisnici-sort" aria-controls="korisnici-lista">
+                                <option value="name-asc">Ime A–Ž</option>
+                                <option value="name-desc">Ime Ž–A</option>
+                                <option value="email-asc">Email A–Z</option>
+                                <option value="email-desc">Email Z–A</option>
+                            </select>
+                        </label>
+                        <button type="button" id="korisnici-reset">Očisti filtre</button>
+                    </div>
+                    <p id="korisnici-rezultat" role="status" aria-live="polite"></p>
+                    <div id="korisnici-lista">
+                        <p>Učitavanje korisnika...</p>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div id="projekt-modal" class="projekt-modal" hidden>
+
+    <div class="projekt-modal-sadrzaj">
+
+        <button
+            type="button"
+            id="zatvori-projekt-modal"
+            class="zatvori-projekt-modal"
+            aria-label="Zatvori"
+        >
+            &times;
+        </button>
+
+        <span class="section-label">
+            Novi projekt
+        </span>
+
+        <h2 id="projekt-modal-naslov">Dodaj projekt</h2>
+
+        <p>
+            Klijent:
+            <strong id="odabrani-korisnik-ime"></strong>
+        </p>
+
+        <form id="novi-projekt-forma">
+
+            <input
+                type="hidden"
+                id="projekt-user-id"
+            >
+            <input type="hidden" id="projekt-id">
+
+            <div class="form-group">
+                <label for="projekt-naziv">
+                    Naziv projekta
+                </label>
+
+                <input
+                    type="text"
+                    id="projekt-naziv"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="projekt-usluga">
+                    Usluga
+                </label>
+
+                <select id="projekt-usluga" required>
+
+                    <option value="">
+                        Odaberite uslugu
+                    </option>
+
+                    <option value="FPV dron produkcija">
+                        FPV dron produkcija
+                    </option>
+
+                    <option value="Foto i video produkcija">
+                        Foto i video produkcija
+                    </option>
+
+                    <option value="Digitalni marketing">
+                        Digitalni marketing
+                    </option>
+
+                    <option value="Izrada web stranica">
+                        Izrada web stranica
+                    </option>
+
+                    <option value="Audio produkcija">
+                        Audio produkcija
+                    </option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="projekt-status">
+                    Status
+                </label>
+
+                <select id="projekt-status" required>
+
+                    <option value="U obradi">
+                        U obradi
+                    </option>
+
+                    <option value="Završeno">
+                        Završeno
+                    </option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="projekt-datum">
+                    Datum
+                </label>
+
+                <input
+                    type="date"
+                    id="projekt-datum"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="projekt-download-url">Poveznica za preuzimanje (neobavezno)</label>
+                <input type="url" id="projekt-download-url" placeholder="https://…" aria-describedby="projekt-download-uputa">
+                <p id="projekt-download-uputa">Zalijepite poveznicu na datoteku ili mapu dostupnu klijentu. Gumb za preuzimanje prikazuje se kada je projekt završen.</p>
+            </div>
+
+            <button
+    type="submit"
+    id="projekt-submit-btn"
+    class="form-btn"
+>
+    Spremi projekt
+</button>
+
+            <p
+                id="projekt-forma-status"
+                aria-live="polite"
+            ></p>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+    <script type="module" src="js/admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prijava | Rakonix</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body>
+
+    <main>
+
+        <section class="auth-sekcija">
+
+            <div class="auth-kartica">
+
+                <span class="section-label">Rakonix račun</span>
+
+                <h1>Prijava</h1>
+
+                <p>
+                    Prijavite se za pristup svojim projektima
+                    i datotekama.
+                </p>
+
+                <form id="prijava-forma">
+
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+
+                        <input
+                            type="email"
+                            id="login-email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-lozinka">Lozinka</label>
+
+                        <input
+                            type="password"
+                            id="login-lozinka"
+                            required
+                        >
+                    </div>
+
+                    <button
+    type="button"
+    id="zaboravljena-lozinka-btn"
+    class="zaboravljena-lozinka-btn"
+>
+    Zaboravili ste lozinku?
+</button>
+
+                    <button type="submit" class="form-btn">
+                        Prijavi se
+                    </button>
+
+                    <p id="prijava-status" aria-live="polite"></p>
+
+                </form>
+
+                <p class="auth-prijava-link">
+                    Nemate račun?
+                    <a href="registracija.html">Registrirajte se</a>
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="js/prijava.js"></script>
+
+</body>
+<header class="auth-header">
+
+    <a href="index.html" class="auth-logo">
+        <img
+            src="slike/rakonix bijela slova transparent.svg"
+            alt="Rakonix"
+        >
+    </a>
+
+    <a href="index.html" class="auth-povratak">
+        Povratak na stranicu
+    </a>
+
+</header>
+</html>

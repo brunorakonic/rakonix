@@ -1,0 +1,535 @@
+/* Rakonix — index.css
+   Izvorni redoslijed pravila i media uvjeti su sacuvani. */
+
+#o-nama,
+#usluge,
+#iza-objektiva,
+#kontakt {
+    position: relative;
+}
+
+#usluge,
+#kontakt {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hero-branding {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.08), transparent 28%),
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.04), transparent 25%),
+        linear-gradient(180deg, #0a0a0a 0%, #111111 45%, #0a0a0a 100%);
+}
+
+.hero-branding h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: clamp(8px, 2vw, 18px);
+    font-weight: 900;
+    text-align: center;
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin-bottom: 30px;
+    color: #ffffff;
+    text-shadow: 
+        0 0 12px rgba(255, 255, 255, 0.18),
+        0 0 35px rgba(255, 255, 255, 0.08);
+}
+
+.hero-branding h1 {
+    animation: heroTitleIn 1s ease forwards;
+}
+
+@keyframes heroTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+        letter-spacing: 35px;
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: clamp(10px, 2.2vw, 22px);
+    }
+}
+
+.hero-branding p {
+    font-size: 1.3rem;
+    color: var(--siva);
+}
+
+.hero-branding p {
+    animation-delay: 0.3s;
+}
+
+#o-nama {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#o-nama h2 {
+    color: #ffffff;
+}
+
+#o-nama strong {
+    color: #ffffff;
+}
+
+#usluge {
+    background-color: #111111;
+}
+
+.usluge-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 45px;
+}
+
+.usluga-link {
+    display: block;
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 22px;
+}
+
+.usluga-link article {
+    height: 100%;
+}
+
+.usluga-link:hover article,
+.usluga-link:focus-visible article {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.055);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.usluga-link:focus-visible {
+    outline: 1px solid #ffffff;
+    outline-offset: 5px;
+}
+
+.usluge-grid article {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#0a0a0a, #0a0a0a) padding-box,
+    linear-gradient(145deg, rgba(255,255,255,0.25), rgba(255,255,255,0.03)) border-box;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid transparent;
+    padding: 34px;
+    border-radius: 22px;
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.usluge-grid article::before {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.usluge-grid article:hover::before {
+    opacity: 1;
+}
+
+.usluge-grid h3 {
+    font-size: 1.45rem;
+    margin-bottom: 16px;
+    color: #ffffff;
+}
+
+.usluge-grid p {
+    color: var(--siva);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+#iza-objektiva {
+    background-color: #0a0a0a;
+}
+
+#kontakt {
+    background: radial-gradient(circle at center, #181818 0%, #0a0a0a 70%);
+    text-align: center;
+}
+
+.kontakt-box {
+    max-width: 850px;
+}
+
+#kontakt h2 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+#kontakt address {
+    font-style: normal;
+    margin: 35px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#kontakt a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#kontakt a:hover {
+    color: var(--siva);
+}
+
+.kontakt-forma {
+    margin: 45px auto 35px;
+    padding: 34px;
+    max-width: 800px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 22px;
+    background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+#drustvene-mreze h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    min-width: 130px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 12px 22px;
+    border-radius: 999px;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    background-color: #ffffff;
+    color: #0a0a0a !important;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 45px;
+}
+
+.portfolio-kartica {
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.01)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 22px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.portfolio-kartica:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.portfolio-kartica img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.portfolio-kartica:hover img {
+    transform: scale(1.04);
+}
+
+.portfolio-kartica-sadrzaj {
+    padding: 28px;
+}
+
+.portfolio-kartica-sadrzaj span {
+    display: inline-block;
+    margin-bottom: 12px;
+
+    color: var(--siva);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.portfolio-kartica-sadrzaj h3 {
+    margin-bottom: 14px;
+
+    color: #ffffff;
+
+    font-size: 1.4rem;
+}
+
+.portfolio-kartica-sadrzaj p {
+    margin-bottom: 0;
+
+    color: var(--siva);
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.portfolio-video {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.portfolio-video.klikabilan-video {
+    cursor: pointer;
+}
+
+.video-modal {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background-color: rgba(0, 0, 0, 0.92);
+
+    z-index: 3000;
+}
+
+.video-modal.otvoren {
+    display: flex;
+}
+
+.video-modal-sadrzaj {
+    position: relative;
+
+    width: 100%;
+    max-width: 1100px;
+}
+
+#modal-video {
+    display: block;
+
+    width: 100%;
+    max-height: 85vh;
+
+    background-color: #000000;
+
+    border-radius: 18px;
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.zatvori-video-modal {
+    position: absolute;
+
+    top: -45px;
+    right: 0;
+
+    border: none;
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 2.5rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease,
+                opacity 0.3s ease;
+}
+
+.zatvori-video-modal:hover {
+    transform: scale(1.15);
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .usluge-grid {
+
+            grid-template-columns: 1fr;
+
+        }
+
+    
+
+    .portfolio-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+
+    }
+
+    
+
+    .portfolio-kartica img {
+
+        height: 210px;
+
+    }
+
+    
+
+    .portfolio-kartica-sadrzaj {
+
+        padding: 24px;
+
+    }
+}
+
+
+/* Uredan rezervni prikaz kada fotografija još nije dodana. */
+.portfolio-priprema {
+    min-height: 240px; display: flex; flex-direction: column;
+    justify-content: center; align-items: center; gap: 16px;
+    padding: 28px; text-align: center;
+    background: radial-gradient(circle at 50% 30%, #252525, #101010 75%);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.portfolio-priprema strong { font-size: clamp(1.5rem, 4vw, 2.5rem); letter-spacing: .15em; text-transform: uppercase; }
+.portfolio-priprema span { color: var(--siva); font-size: .8rem; letter-spacing: .06em; }
+.video-modal { overflow-y: auto; }
+.video-modal.otvoren { display: flex; }
+body.video-modal-open { overflow: hidden; }
+/* Portfolio s filtrima, fotografskim galerijama i videima na zahtjev. */
+.portfolio-filtri {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px;
+}
+.portfolio-filtri button {
+    padding: 12px 20px; min-height: 44px; border: 1px solid #414141;
+    border-radius: 999px; background: transparent; color: #ccc;
+    font: 700 .8rem Arial, sans-serif; cursor: pointer; transition: background .2s, color .2s;
+}
+.portfolio-filtri button:hover { background: #222; color: #fff; }
+.portfolio-filtri button[aria-pressed="true"] { background: #fff; color: #111; border-color: #fff; }
+.portfolio-rezultat { margin-top: 16px; font-size: .85rem; color: #999; }
+#portfolio-grid { margin-top: 24px; align-items: stretch; }
+.rad-kartica[hidden] { display: none; }
+.rad-kartica { min-width: 0; }
+.rad-otvori {
+    display: flex; flex-direction: column; width: 100%; height: 100%;
+    padding: 0; border: 0; background: transparent; color: inherit;
+    font-family: inherit; text-align: left; cursor: pointer; border-radius: inherit;
+}
+.rad-otvori:focus-visible { outline: 2px solid #fff; outline-offset: -5px; }
+.rad-medij { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: #161616; }
+.rad-medij::after { content: ''; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent,rgba(0,0,0,.5)); pointer-events: none; }
+.rad-medij img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rad-oznaka {
+    position: absolute; z-index: 1; left: 16px; bottom: 16px;
+    padding: 7px 11px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px;
+    background: rgba(0,0,0,.65); color: #fff; font-size: .75rem;
+}
+.rad-ikona {
+    position: absolute; z-index: 1; right: 16px; bottom: 14px; width: 42px; height: 42px;
+    display: grid; place-items: center; border: 1px solid rgba(255,255,255,.5);
+    border-radius: 50%; background: rgba(0,0,0,.55); color: white; font-size: 1.35rem;
+}
+.rad-kartica .portfolio-kartica-sadrzaj { width: 100%; }
+.rad-kartica .portfolio-kartica-sadrzaj h3 { font-size: 1.25rem; margin-bottom: 10px; }
+body.portfolio-open { overflow: hidden; }
+.portfolio-dialog {
+    inset: 0; margin: auto; padding: 0; border: 1px solid #444; border-radius: 20px;
+    width: min(1120px, calc(100% - 40px)); max-width: none;
+    max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain;
+    color: #fff; background: #101010; box-shadow: 0 20px 90px #000;
+}
+.portfolio-dialog::backdrop { background: rgba(0,0,0,.92); backdrop-filter: blur(6px); }
+.galerija-okvir { padding: 22px; }
+.galerija-zaglavlje { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.galerija-zaglavlje h2 { margin: 0 0 6px; font-size: 1.35rem; line-height: 1.3; }
+.galerija-zaglavlje p { color: #aaa; font-size: .88rem; line-height: 1.5; margin: 0; }
+#galerija-zatvori { flex-shrink: 0; font-size: 1.8rem; line-height: 1; width: 44px; height: 44px; }
+.portfolio-dialog button {
+    border: 1px solid #494949; background: #1c1c1c; color: #fff; border-radius: 10px;
+    cursor: pointer;
+}
+.portfolio-dialog button:hover { background: #333; }
+.galerija-medij { display: grid; place-items: center; background: #050505; min-height: 150px; touch-action: pan-y pinch-zoom; }
+.galerija-medij img, .galerija-medij video {
+    display: block; width: 100%; height: min(60dvh, 610px); object-fit: contain;
+}
+.galerija-kontrole { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; }
+.galerija-kontrole button { min-height: 44px; padding: 10px 16px; font-size: .85rem; }
+#galerija-broj { white-space: nowrap; color: #ccc; font-size: .85rem; }
+.galerija-slicice { display: flex; gap: 8px; overflow-x: auto; padding: 8px 3px; margin-top: 10px; scrollbar-width: thin; }
+.galerija-slicice[hidden] { display: none; }
+.galerija-slicice button { flex: 0 0 76px; padding: 2px; min-height: 58px; }
+.galerija-slicice img { display: block; width: 70px; height: 52px; object-fit: cover; border-radius: 6px; }
+.galerija-slicice button[aria-current="true"] { border: 2px solid #fff; padding: 1px; }
+.galerija-izravno { display: inline-block; margin-top: 10px; padding: 6px 0; color: #b8b8b8; font-size: .8rem; text-underline-offset: 4px; }
+.galerija-greska { margin: 12px 0; color: #ffb4b4; line-height: 1.5; }
+@media (max-width: 600px) {
+    .portfolio-filtri { gap: 8px; }
+    .portfolio-filtri button { padding: 11px 15px; }
+    .portfolio-dialog { width: calc(100% - 16px); max-height: calc(100dvh - 16px); border-radius: 14px; }
+    .galerija-okvir { padding: 14px; }
+    .galerija-zaglavlje h2 { font-size: 1.1rem; }
+    .galerija-medij img, .galerija-medij video { height: 48dvh; }
+    .galerija-kontrole button { padding: 10px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+    .galerija-medij img, .galerija-medij video { height: 55dvh; }
+}
+@media (max-width: 600px) {
+    .hero-branding h1 { font-size: clamp(2.1rem, 8vw, 3rem); }
+    .kontakt-forma { padding: 24px 18px; }
+    .usluge-grid article { padding: 26px; }
+    .video-modal { padding: 50px 16px; }
+    .portfolio-priprema { min-height: 210px; }
+}
+
+/* Izdvojeni radovi i pregled cijelog portfolija. */
+.portfolio-filtri[hidden] { display: none; }
+.portfolio-vise { text-align: center; margin-top: 36px; }
+#portfolio-svi, .portfolio-poziv a { display: inline-flex; align-items: center; justify-content: center; gap: 20px; min-height: 48px; padding: 15px 25px; border-radius: 999px; font: 700 .9rem Arial,sans-serif; cursor: pointer; }
+#portfolio-svi { background: transparent; border: 1px solid #666; color: white; }
+#portfolio-svi:hover { background: #252525; }
+.portfolio-poziv { display: flex; align-items: center; gap: 36px; justify-content: space-between; margin-top: 64px; padding: 36px; border: 1px solid #333; border-radius: 20px; background: linear-gradient(120deg,#1d1d1d,#101010); }
+.portfolio-poziv h3 { font-size: clamp(1.3rem,2.5vw,1.8rem); line-height: 1.35; margin: 12px 0; max-width: 620px; }
+.portfolio-poziv p { color: #bbb; max-width: 620px; line-height: 1.7; }
+.portfolio-poziv a { flex-shrink: 0; background: #fff; color: #111; text-decoration: none; }
+@media(max-width:768px) { .portfolio-poziv { flex-direction: column; align-items: flex-start; padding: 24px; gap: 24px; } }

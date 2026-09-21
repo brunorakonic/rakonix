@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Moj račun | Rakonix</title>
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/moj-racun.css">
+</head>
+
+<body>
+
+    <main>
+
+        <section class="auth-sekcija">
+
+            <div class="auth-kartica">
+
+                <span class="section-label">Rakonix klijentski portal</span>
+
+                <h1>Moj račun</h1>
+
+                <div id="korisnik-podaci">
+
+                    <p>
+                        <strong>Ime:</strong>
+                        <span id="korisnik-ime">Učitavanje...</span>
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <span id="korisnik-email">Učitavanje...</span>
+                    </p>
+
+                </div>
+
+                <div class="moji-projekti">
+    <h2>Moji projekti</h2>
+
+    <div id="projekti-lista">
+        <p>Učitavanje projekata...</p>
+    </div>
+</div>
+
+            
+
+                <p id="racun-status" aria-live="polite"></p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="js/moj-racun.js"></script>
+
+</body>
+
+<header class="portal-header">
+
+    <a href="index.html" class="portal-logo">
+        <img
+            src="slike/rakonix bijela slova transparent.svg"
+            alt="Rakonix"
+        >
+    </a>
+
+    <nav class="portal-nav">
+
+        <a href="moj-racun.html" class="portal-nav-active">
+            Moj račun
+        </a>
+
+        <a href="admin.html" id="admin-link" class="portal-admin-link" hidden>
+    Admin panel
+</a>
+
+<a
+    href="admin.html"
+    id="admin-link"
+    class="portal-admin-link"
+    hidden
+>
+    Admin panel
+</a>
+
+        <button
+            type="button"
+            id="odjava-header-btn"
+            class="portal-odjava-btn"
+        >
+            Odjavi se
+        </button>
+
+    </nav>
+
+</header>
+</html>

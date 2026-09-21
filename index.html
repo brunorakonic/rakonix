@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakonix</title>
+    <meta name="keywords" content="digitalni marketing, snimanje dronom, izrada web stranica, snimanje videospota, vođenje društvenih mreža">
+    <meta name="description" content="Vaš brend iz nove perspektive. Spajamo digitalni marketing, moderni web dizajn i vrhunsku video produkciju. Pretvorite svoju viziju u digitalnu stvarnost.">
+    <meta name="author" content="Bruno Rakonić">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body id="vrh">
+    <header>
+        <div class="logo">
+            <a href="#vrh" aria-label="Povratak na vrh stranice">
+             <img src="slike/rakonix bijela slova transparent.svg" alt="Rakonix logo"> 
+            </a>
+        </div>
+        <button class="menu-toggle" type="button" aria-label="Otvori navigaciju" aria-expanded="false" aria-controls="glavna-navigacija">
+        <span></span> 
+        <span></span> 
+        <span></span>
+        </button>
+        <nav id="glavna-navigacija" class="main-nav">
+            <ul>
+                <li><a href="#o-nama">O NAMA</a></li>
+                <li><a href="#usluge">USLUGE</a></li>
+                <li><a href="#iza-objektiva">IZA OBJEKTIVA</a></li>
+                <li><a href="#kontakt">KONTAKT</a></li>
+            </ul>
+        </nav>
+                <a href="prijava.html" id="account-link" class="account-link">
+    Prijavi se
+</a>
+    </header>
+
+    <section class="hero-branding">
+        <h1>RAKONIX</h1>
+        <p>Vaša priča zaslužuje bolju perspektivu!<br>
+            Kreiramo sadržaj koji se ne zaboravlja</p>
+            <a href="#kontakt" class="hero-btn">Pokrenimo projekt</a>
+    </section>
+    
+    
+    <main>
+        <section id="o-nama">
+          <div class="section-content">
+            <span class="section-label">Tko smo</span>
+            <h2>O nama</h2>
+            <p>Naša misija je jednostavna. Pretvoriti vašu viziju u digitalnu stvarnost. Tu smo da osiguramo da vaš prvi dojam
+                bude i najbolji dojam!
+            </p>
+            <p><strong>Rakonix</strong> nudi vizualno impresivna rješenja koja vas izdvajaju iz mase.</p>
+            <p>Bilo da se radi o digitalnom marketingu, prezentaciji nekretnina, snimanju evenata ili izradi modernih web stranica, 
+            naš pristup je uvijek isti: profesionalan, inovativan i usmjeren na vaše rezultate.</p>
+           </div>
+        </section>
+        
+<section id="usluge">
+    <div class="section-content">
+
+        <span class="section-label">Što radimo</span>
+        <h2>Usluge</h2>
+
+        <div class="usluge-grid">
+
+            <a href="fpv-dron-produkcija.html" class="usluga-link">
+                <article>
+                    <h3>FPV dron produkcija</h3>
+
+                    <p>
+                        Nudimo inovativno <strong>FPV snimanje</strong> koje pruža
+                        neponovljiv osjećaj brzine i dinamike.<br>
+                        Za razliku od običnih dronova, FPV omogućava let kroz uske
+                        prostore i snimke iz prvog lica koje oduzimaju dah.
+                    </p>
+                </article>
+            </a>
+
+            <a href="foto-i-video-produkcija.html" class="usluga-link">
+                <article>
+                    <h3>Foto &amp; video produkcija</h3>
+
+                    <p>
+                        Od glazbenih videospotova i kratkih filmova do profesionalne
+                        fotografije. Spajamo vrhunsku opremu s kreativnom vizijom.
+                    </p>
+                </article>
+            </a>
+
+            <a href="digitalni-marketing.html" class="usluga-link">
+                <article>
+                    <h3>Digitalni marketing</h3>
+
+                    <p>
+                        Upravljanje društvenim mrežama i kampanje koje vaš sadržaj
+                        plasiraju pred pravu publiku.
+                    </p>
+                </article>
+            </a>
+
+            <a href="izrada-web-stranica.html" class="usluga-link">
+                <article>
+                    <h3>Izrada web stranica</h3>
+
+                    <p>
+                        Moderni, brzi i responzivni webovi prilagođeni vašem brendu.
+                        Gradimo digitalni dom za vaše poslovanje.
+                    </p>
+                </article>
+            </a>
+
+            <a href="audio-produkcija.html" class="usluga-link">
+                <article>
+                    <h3>Audio produkcija</h3>
+
+                    <p>
+                        Snimanje i obrada zvuka, voiceoveri, izrada jingleova i
+                        sound design.
+                    </p>
+                </article>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+<section id="iza-objektiva">
+    <div class="section-content">
+
+        <span class="section-label">Naši radovi</span>
+        <h2>Iza objektiva</h2>
+
+        <p>
+            Prostori, koncerti i kadrovi iz nove perspektive.<br>
+            Odabrani FPV videi i fotografije prostora i glazbe uživo.
+        </p>
+
+        <div class="portfolio-filtri" hidden role="group" aria-label="Kategorije radova">
+            <button type="button" data-portfolio-filter="sve" aria-pressed="true" aria-controls="portfolio-grid">Svi radovi</button>
+            <button type="button" data-portfolio-filter="fpv" aria-pressed="false" aria-controls="portfolio-grid">FPV video</button>
+            <button type="button" data-portfolio-filter="nekretnine" aria-pressed="false" aria-controls="portfolio-grid">Nekretnine</button>
+            <button type="button" data-portfolio-filter="audio" aria-pressed="false" aria-controls="portfolio-grid">Audio produkcija</button>
+            <button type="button" data-portfolio-filter="koncerti" aria-pressed="false" aria-controls="portfolio-grid">Koncerti</button>
+        </div>
+        <p id="portfolio-rezultat" class="portfolio-rezultat" aria-live="polite">Izdvojeno · 2 videa i 4 fotografije</p>
+        <div id="portfolio-grid" class="portfolio-grid"></div>
+        <div class="portfolio-vise"><button id="portfolio-svi" type="button" aria-expanded="false" aria-controls="portfolio-grid">Pogledaj sve radove</button></div>
+        <div class="portfolio-poziv">
+            <div><span class="section-label">Vaša priča, naš sljedeći kadar</span>
+            <h3>Pokažimo što vaš prostor ili događaj čini posebnim.</h3>
+            <p>Trebate fotografije ili FPV video? Javite nam što planirate pa zajedno pronađimo pravi način da to prikažemo.</p></div>
+            <a href="#kontakt">Pošalji upit <span aria-hidden="true">↗</span></a>
+        </div>
+
+    </div>
+</section>
+
+<section id="kontakt">
+    <div class="section-content kontakt-box">
+        <span class="section-label">Kontakt</span>
+        <h2>Spremni za novu perspektivu?</h2>
+        <p>Pošaljite nam kratko što vam treba — video, web stranica, društvene mreže, kampanja ili kompletna produkcija. Javit ćemo vam se s konkretnim prijedlogom.</p>
+
+        <form id="kontakt-forma" class="kontakt-forma" action="#" method="post" novalidate>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="ime">Ime i prezime</label>
+                    <input type="text" id="ime" name="ime" placeholder="Vaše ime" required>
+                </div>
+
+                <div class="form-group">
+    <label for="email">Email adresa</label>
+
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="vas@email.com"
+        required
+        aria-describedby="email-greska"
+    >
+
+    <p
+        id="email-greska"
+        class="poruka-greske"
+        aria-live="polite"
+    ></p>
+</div>
+            </div>
+
+            <div class="form-group">
+                <label for="usluga">Što vas zanima?</label>
+                <select id="usluga" name="usluga" required>
+                    <option value="">Odaberite uslugu</option>
+                    <option value="FPV dron produkcija">FPV dron produkcija</option>
+                    <option value="Foto i video produkcija">Foto & video produkcija</option>
+                    <option value="Digitalni marketing">Digitalni marketing</option>
+                    <option value="Izrada web stranice">Izrada web stranice</option>
+                    <option value="Audio produkcija">Audio produkcija</option>
+                    <option value="Ostalo">Ostalo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="poruka">Poruka</label>
+                <textarea id="poruka" name="poruka" rows="6" placeholder="Ukratko napišite što vam treba..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-btn">Pošalji upit</button>
+            <p id="status-forme" class="status-forme" aria-live="polite"></p>
+        </form>
+
+        <address>
+            <a href="mailto:rakonix.hr@gmail.com">rakonix.hr@gmail.com</a>
+            <a href="tel:+385998826599">+385 99 882 6599</a>
+        </address>
+
+        <div id="drustvene-mreze">
+            <h3>Pratite nas</h3>
+
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61585894774517" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.instagram.com/rakonix_hr/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.tiktok.com/@.rakonix" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <br>
+        <br>
+        <br>
+
+         </main>
+
+
+        <footer>
+            <a href="#vrh" class="footer-top-link">
+    <span aria-hidden="true">↑</span>
+    Povratak na vrh
+</a>
+            <p>&copy; 2026 Rakonix. Sva prava pridržana.</p>
+        </footer>
+
+        <dialog id="portfolio-dialog" class="portfolio-dialog" aria-labelledby="galerija-naslov">
+            <div class="galerija-okvir">
+                <div class="galerija-zaglavlje">
+                    <div><h2 id="galerija-naslov"></h2><p id="galerija-opis"></p></div>
+                    <button id="galerija-zatvori" type="button" aria-label="Zatvori galeriju" autofocus>×</button>
+                </div>
+                <div id="galerija-medij" class="galerija-medij"></div>
+                <p id="galerija-greska" class="galerija-greska" role="alert" hidden>Materijal se nije učitao. Pokušajte ga otvoriti zasebno poveznicom ispod.</p>
+                <div class="galerija-kontrole">
+                    <button id="galerija-prethodna" type="button" aria-label="Prethodni rad">← <span>Prethodno</span></button>
+                    <span id="galerija-broj" aria-live="polite" aria-atomic="true"></span>
+                    <button id="galerija-sljedeca" type="button" aria-label="Sljedeći rad"><span>Sljedeće</span> →</button>
+                </div>
+                <div id="galerija-slicice" class="galerija-slicice" role="group" aria-label="Odaberite fotografiju"></div>
+                <a id="galerija-izravno" class="galerija-izravno" target="_blank" rel="noopener noreferrer">Otvori zasebno</a>
+            </div>
+        </dialog>
+
+        <script type="module" src="js/script.js"></script>
+        <script type="module" src="js/portfolio.js"></script>
+
+</body>
+
+</html>
+

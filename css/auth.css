@@ -1,0 +1,96 @@
+/* Rakonix — auth.css
+   Izvorni redoslijed pravila i media uvjeti su sacuvani. */
+
+.auth-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 18px 6%;
+
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    z-index: 2000;
+}
+
+.auth-logo {
+    display: flex;
+    align-items: center;
+}
+
+.auth-logo img {
+    display: block;
+    width: 150px;
+    height: auto;
+}
+
+.auth-povratak {
+    color: #fff;
+    text-decoration: none;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    transition: opacity 0.25s ease;
+}
+
+.auth-povratak:hover {
+    opacity: 0.65;
+}
+
+.zaboravljena-lozinka-btn {
+    display: block;
+
+    margin: -5px 0 22px auto;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: #999;
+
+    font-size: 0.8rem;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.zaboravljena-lozinka-btn:hover {
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .auth-header {
+
+            padding: 15px 20px;
+
+        }
+
+    
+
+    .auth-logo img {
+
+            width: 120px;
+
+        }
+
+    
+
+    .auth-povratak {
+
+            font-size: 0.65rem;
+
+        }
+}

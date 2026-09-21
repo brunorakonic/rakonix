@@ -1,0 +1,622 @@
+/* Rakonix — usluge.css
+   Izvorni redoslijed pravila i media uvjeti su sacuvani. */
+
+.povratak-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+
+    margin-bottom: 30px;
+    padding: 10px 16px;
+
+    color: var(--siva);
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.povratak-link span {
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.povratak-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.35);
+    transform: translateY(-2px);
+}
+
+.povratak-link:hover span {
+    transform: translateX(-4px);
+}
+
+.povratak-link:focus-visible {
+    outline: 1px solid #ffffff;
+    outline-offset: 4px;
+}
+
+.fpv-prednosti {
+    background:
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(255, 255, 255, 0.05),
+            transparent 35%
+        ),
+        #0a0a0a;
+}
+
+.prednosti-lista {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 900px;
+    margin-top: 40px;
+    list-style: none;
+}
+
+.prednosti-lista li {
+    position: relative;
+    min-height: 90px;
+    padding: 24px 24px 24px 62px;
+
+    display: flex;
+    align-items: center;
+
+    color: #ffffff;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.01)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+
+    font-size: 1rem;
+    line-height: 1.5;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.prednosti-lista li::before {
+    content: "✓";
+
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 26px;
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 50%;
+
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.prednosti-lista li:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.portfolio-placeholder {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    margin-top: 45px;
+    min-height: 280px;
+    border: 1px dashed #444444;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--siva);
+    text-align: center;
+}
+
+.portfolio-placeholder:hover {
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.portfolio-placeholder p {
+    margin: 0;
+}
+
+.faq-sekcija {
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 255, 255, 0.05),
+            transparent 30%
+        ),
+        #0f0f0f;
+}
+
+.faq-lista {
+    max-width: 900px;
+    margin-top: 45px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.faq-stavka {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.faq-stavka h3 {
+    margin: 0;
+}
+
+.faq-pitanje {
+    width: 100%;
+    padding: 24px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        padding-left 0.3s ease;
+}
+
+.faq-pitanje:hover {
+    color: var(--siva);
+    padding-left: 8px;
+}
+
+.faq-ikona {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+
+    font-size: 1.3rem;
+    font-weight: 400;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.faq-stavka.is-open .faq-ikona {
+    transform: rotate(45deg);
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #0a0a0a;
+}
+
+.faq-odgovor {
+    padding: 0 50px 24px 0;
+}
+
+.faq-odgovor p {
+    margin: 0;
+    max-width: 780px;
+    color: var(--siva);
+    line-height: 1.8;
+}
+
+.usluga-stranica {
+    width: 100%;
+    overflow: visible;
+}
+
+.video-hero {
+    position: relative;
+
+    width: 100%;
+    height: 76vh;
+    min-height: 620px;
+    max-height: 760px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    background-color: #050505;
+}
+
+.hero-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-video-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.7) 45%,
+            rgba(0, 0, 0, 0.28) 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.72) 0%,
+            rgba(0, 0, 0, 0.1) 60%,
+            rgba(0, 0, 0, 0.18) 100%
+        );
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-video-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    padding-top: 185px;
+    padding-bottom: 80px;
+}
+
+.hero-video-content h1 {
+    max-width: 850px;
+    margin-top: 22px;
+
+    font-size: clamp(3rem, 4.8vw, 4.8rem);
+    line-height: 1;
+}
+
+.hero-video-content .usluga-uvod {
+    max-width: 700px;
+    margin-top: 24px;
+
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.hero-video-content .hero-btn {
+    margin-top: 10px;
+}
+
+#rakonix-audio {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    height: 50px;
+
+    margin: 30px 0;
+
+    border-radius: 999px;
+
+    filter: invert(1);
+
+    opacity: 0.9;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.08);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+#rakonix-audio:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+#audio-visualizer {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: 120px;
+    margin: 25px 0;
+
+    background-color: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+}
+
+.fpv-tablica {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    background-color: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    color: #ffffff;
+}
+
+.fpv-tablica th,
+.fpv-tablica td {
+    padding: 18px 22px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fpv-tablica th {
+    background-color: #151515;
+
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+}
+
+.fpv-tablica td {
+    color: var(--siva);
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.fpv-tablica tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+.fpv-tablica tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.fpv-tablica tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.fpv-tablica td:first-child {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.table-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .povratak-link {
+
+            margin-bottom: 24px;
+
+            padding: 9px 14px;
+
+            font-size: 0.7rem;
+
+        }
+
+    
+
+    .faq-pitanje {
+
+            padding: 20px 0;
+
+            font-size: 1rem;
+
+        }
+
+    
+
+    .faq-pitanje:hover {
+
+            padding-left: 0;
+
+        }
+
+    
+
+    .faq-ikona {
+
+            width: 30px;
+
+            height: 30px;
+
+            font-size: 1.1rem;
+
+        }
+
+    
+
+    .faq-odgovor {
+
+            padding: 0 0 22px;
+
+        }
+
+    
+
+    .video-hero {
+
+            height: auto;
+
+            min-height: 720px;
+
+            max-height: none;
+
+    
+
+            align-items: flex-end;
+
+        }
+
+    
+
+    .hero-video {
+
+            object-position: center;
+
+        }
+
+    
+
+    .hero-video-overlay {
+
+            background:
+
+                linear-gradient(
+
+                    0deg,
+
+                    rgba(0, 0, 0, 0.96) 0%,
+
+                    rgba(0, 0, 0, 0.72) 58%,
+
+                    rgba(0, 0, 0, 0.35) 100%
+
+                );
+
+        }
+
+    
+
+    .hero-video-content {
+
+            padding-top: 125px;
+
+            padding-bottom: 60px;
+
+        }
+
+    
+
+    .hero-video-content h1 {
+
+            max-width: 100%;
+
+            margin-top: 18px;
+
+    
+
+            font-size: clamp(2.35rem, 11vw, 3.6rem);
+
+            line-height: 1;
+
+        }
+
+    
+
+    .hero-video-content .usluga-uvod {
+
+            margin-top: 20px;
+
+    
+
+            font-size: 0.98rem;
+
+            line-height: 1.7;
+
+        }
+
+    
+
+    .hero-video-content .hero-btn {
+
+            margin-top: 26px;
+
+        }
+
+    
+
+    .table-wrapper {
+
+        overflow-x: auto;
+
+        width: 100%;
+
+        }
+
+    
+
+    .fpv-tablica {
+
+        min-width: 650px;
+
+        margin: 30px auto;
+
+        }
+
+    
+
+    .fpv-tablica th,
+
+         .fpv-tablica td {
+
+        padding: 14px 12px;
+
+        font-size: 0.85rem;
+
+        }
+}
+
+
+/* Tablica se pomiče unutar svog okvira; prvi stupac ostaje dostupan. */
+.table-wrapper { justify-content: flex-start; }
+.fpv-tablica { flex-shrink: 0; }
+.hero-video-content { min-width: 0; }
+.portfolio-placeholder a { color: inherit; text-underline-offset: 5px; }
+@media (max-width: 600px) {
+    .prednosti-lista { grid-template-columns: minmax(0, 1fr); }
+    .hero-video-content h1 { overflow-wrap: anywhere; }
+    .hero-video-content { padding-inline: 6%; }
+}

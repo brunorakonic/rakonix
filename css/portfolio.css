@@ -1,0 +1,161 @@
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 45px;
+}
+
+.portfolio-kartica {
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.01)
+    );
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 22px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.portfolio-kartica:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.portfolio-kartica img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.portfolio-kartica:hover img {
+    transform: scale(1.04);
+}
+
+.portfolio-kartica-sadrzaj {
+    padding: 28px;
+}
+
+.portfolio-kartica-sadrzaj span {
+    display: inline-block;
+    margin-bottom: 12px;
+
+    color: var(--siva);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.portfolio-kartica-sadrzaj h3 {
+    margin-bottom: 14px;
+
+    color: #ffffff;
+
+    font-size: 1.4rem;
+}
+
+.portfolio-kartica-sadrzaj p {
+    margin-bottom: 0;
+
+    color: var(--siva);
+
+    font-size: 1rem;
+    line-height: 1.7;
+}
+/* Portfolio s filtrima, fotografskim galerijama i videima na zahtjev. */
+.portfolio-filtri {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px;
+}
+.portfolio-filtri button {
+    padding: 12px 20px; min-height: 44px; border: 1px solid #414141;
+    border-radius: 999px; background: transparent; color: #ccc;
+    font: 700 .8rem Arial, sans-serif; cursor: pointer; transition: background .2s, color .2s;
+}
+.portfolio-filtri button:hover { background: #222; color: #fff; }
+.portfolio-filtri button[aria-pressed="true"] { background: #fff; color: #111; border-color: #fff; }
+.portfolio-rezultat { margin-top: 16px; font-size: .85rem; color: #999; }
+#portfolio-grid { margin-top: 24px; align-items: stretch; }
+.rad-kartica[hidden] { display: none; }
+.rad-kartica { min-width: 0; }
+.rad-otvori {
+    display: flex; flex-direction: column; width: 100%; height: 100%;
+    padding: 0; border: 0; background: transparent; color: inherit;
+    font-family: inherit; text-align: left; cursor: pointer; border-radius: inherit;
+}
+.rad-otvori:focus-visible { outline: 2px solid #fff; outline-offset: -5px; }
+.rad-medij { position: relative; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: #161616; }
+.rad-medij::after { content: ''; position: absolute; inset: 45% 0 0; background: linear-gradient(transparent,rgba(0,0,0,.5)); pointer-events: none; }
+.rad-medij img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rad-oznaka {
+    position: absolute; z-index: 1; left: 16px; bottom: 16px;
+    padding: 7px 11px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px;
+    background: rgba(0,0,0,.65); color: #fff; font-size: .75rem;
+}
+.rad-ikona {
+    position: absolute; z-index: 1; right: 16px; bottom: 14px; width: 42px; height: 42px;
+    display: grid; place-items: center; border: 1px solid rgba(255,255,255,.5);
+    border-radius: 50%; background: rgba(0,0,0,.55); color: white; font-size: 1.35rem;
+}
+.rad-kartica .portfolio-kartica-sadrzaj { width: 100%; }
+.rad-kartica .portfolio-kartica-sadrzaj h3 { font-size: 1.25rem; margin-bottom: 10px; }
+body.portfolio-open { overflow: hidden; }
+.portfolio-dialog {
+    inset: 0; margin: auto; padding: 0; border: 1px solid #444; border-radius: 20px;
+    width: min(1120px, calc(100% - 40px)); max-width: none;
+    max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain;
+    color: #fff; background: #101010; box-shadow: 0 20px 90px #000;
+}
+.portfolio-dialog::backdrop { background: rgba(0,0,0,.92); backdrop-filter: blur(6px); }
+.galerija-okvir { padding: 22px; }
+.galerija-zaglavlje { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+.galerija-zaglavlje h2 { margin: 0 0 6px; font-size: 1.35rem; line-height: 1.3; }
+.galerija-zaglavlje p { color: #aaa; font-size: .88rem; line-height: 1.5; margin: 0; }
+#galerija-zatvori { flex-shrink: 0; font-size: 1.8rem; line-height: 1; width: 44px; height: 44px; }
+.portfolio-dialog button {
+    border: 1px solid #494949; background: #1c1c1c; color: #fff; border-radius: 10px;
+    cursor: pointer;
+}
+.portfolio-dialog button:hover { background: #333; }
+.galerija-medij { display: grid; place-items: center; background: #050505; min-height: 150px; touch-action: pan-y pinch-zoom; }
+.galerija-medij img, .galerija-medij video {
+    display: block; width: 100%; height: min(60dvh, 610px); object-fit: contain;
+}
+.galerija-kontrole { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; }
+.galerija-kontrole button { min-height: 44px; padding: 10px 16px; font-size: .85rem; }
+#galerija-broj { white-space: nowrap; color: #ccc; font-size: .85rem; }
+.galerija-slicice { display: flex; gap: 8px; overflow-x: auto; padding: 8px 3px; margin-top: 10px; scrollbar-width: thin; }
+.galerija-slicice[hidden] { display: none; }
+.galerija-slicice button { flex: 0 0 76px; padding: 2px; min-height: 58px; }
+.galerija-slicice img { display: block; width: 70px; height: 52px; object-fit: cover; border-radius: 6px; }
+.galerija-slicice button[aria-current="true"] { border: 2px solid #fff; padding: 1px; }
+.galerija-izravno { display: inline-block; margin-top: 10px; padding: 6px 0; color: #b8b8b8; font-size: .8rem; text-underline-offset: 4px; }
+.galerija-greska { margin: 12px 0; color: #ffb4b4; line-height: 1.5; }
+@media (max-width: 600px) {
+    .portfolio-filtri { gap: 8px; }
+    .portfolio-filtri button { padding: 11px 15px; }
+    .portfolio-dialog { width: calc(100% - 16px); max-height: calc(100dvh - 16px); border-radius: 14px; }
+    .galerija-okvir { padding: 14px; }
+    .galerija-zaglavlje h2 { font-size: 1.1rem; }
+    .galerija-medij img, .galerija-medij video { height: 48dvh; }
+    .galerija-kontrole button { padding: 10px; }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+    .galerija-medij img, .galerija-medij video { height: 55dvh; }
+}
+
+@media(max-width:768px){.portfolio-grid{grid-template-columns:1fr}.portfolio-kartica-sadrzaj{padding:24px}}
